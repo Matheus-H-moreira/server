@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "titulo": "Treino Full Body",
+    "descricao": "Treino completo para o corpo todo, ideal para iniciantes e intermediários.",
+    "imagem": "imagens/treino.jpg",
+    "data_publicacao": "2025-06-23",
+    "tags": ["Corpo Inteiro", "Força", "Iniciantes"],
+    "conteudo": "O treino Full Body é uma excelente opção para quem busca trabalhar todos os grupos musculares em uma única sessão.\n\nBenefícios:\n- Otimiza o tempo de treino\n- Estimula o corpo inteiro\n- Ideal para quem tem poucos dias na semana\n\nExemplo de treino:\n1. Agachamento livre - 3x12\n2. Supino reto - 3x10\n3. Remada curvada - 3x10\n4. Desenvolvimento de ombros - 3x12\n5. Elevação de pernas - 3x15\n\nDicas:\n- Descanse 60-90s entre as séries\n- Mantenha a postura correta\n- Aumente a carga progressivamente",
+    "imagens_adicionais": ["imagens/treino.jpg"]
+  },
+  {
+    "id": 2,
+    "titulo": "HIIT 20 Minutos",
+    "descricao": "Treino intenso de alta queima calórica em pouco tempo.",
+    "imagem": "imagens/hiit.jpg",
+    "data_publicacao": "2025-06-23",
+    "tags": ["HIIT", "Cardio", "Queima Calórica"],
+    "conteudo": "O HIIT (High Intensity Interval Training) é um método eficiente para queimar gordura e melhorar o condicionamento.\n\nComo fazer:\n- 1 min corrida intensa\n- 1 min caminhada\n- Repita por 10 ciclos\n\nBenefícios:\n- Acelera o metabolismo\n- Pode ser feito em qualquer lugar\n- Não exige equipamentos\n\nCuidados:\n- Consulte um profissional antes de iniciar\n- Respeite seus limites",
+    "imagens_adicionais": ["imagens/hiit.jpg"]
+  },
+  {
+    "id": 3,
+    "titulo": "Alongamento e Mobilidade",
+    "descricao": "Série de exercícios para melhorar a flexibilidade e prevenir lesões.",
+    "imagem": "imagens/alongamento.jpg",
+    "data_publicacao": "2025-06-23",
+    "tags": ["Alongamento", "Mobilidade", "Prevenção"],
+    "conteudo": "O alongamento e a mobilidade são fundamentais para a saúde das articulações e prevenção de lesões.\n\nExercícios sugeridos:\n- Alongamento de cadeia posterior\n- Mobilidade de ombros\n- Rotação de tronco\n- Alongamento de quadríceps\n\nDicas:\n- Realize após o treino ou em dias de descanso\n- Mantenha cada posição por 20-30 segundos",
+    "imagens_adicionais": ["imagens/alongamento.jpg"]
+  },
+  {
+    "id": 4,
+    "titulo": "Treino de Pernas Avançado",
+    "descricao": "Foque no fortalecimento e hipertrofia das pernas com exercícios avançados.",
+    "imagem": "imagens/pernas.jpg",
+    "data_publicacao": "2025-06-23",
+    "tags": ["Pernas", "Hipertrofia", "Avançado"],
+    "conteudo": "Este treino é voltado para quem já possui experiência e deseja desafiar ainda mais a musculatura das pernas.\n\nExemplo de treino:\n1. Agachamento livre - 4x8\n2. Leg press - 4x10\n3. Stiff - 3x10\n4. Cadeira extensora - 3x12\n5. Panturrilha em pé - 4x15\n\nDicas:\n- Priorize a execução correta\n- Descanse 60-90s entre as séries",
+    "imagens_adicionais": ["imagens/pernas.jpg"]
+  },
+  {
+    "id": 5,
+    "titulo": "Treino de Braços e Ombros",
+    "descricao": "Rotina para definição e força dos membros superiores.",
+    "imagem": "imagens/bracos.jpg",
+    "data_publicacao": "2025-06-23",
+    "tags": ["Braços", "Ombros", "Definição"],
+    "conteudo": "Treino focado em bíceps, tríceps e ombros para melhorar a força e a estética dos membros superiores.\n\nExemplo de treino:\n1. Rosca direta - 3x12\n2. Tríceps testa - 3x10\n3. Elevação lateral - 3x12\n4. Rosca martelo - 3x10\n5. Desenvolvimento militar - 3x10\n\nDicas:\n- Não exagere na carga\n- Foque na contração muscular",
+    "imagens_adicionais": ["imagens/bracos.jpg"]
+  },
+  {
+    "id": 6,
+    "titulo": "Treino Cardio em Casa",
+    "descricao": "Exercícios aeróbicos para fazer em casa, sem equipamentos.",
+    "imagem": "imagens/cardio.jpg",
+    "data_publicacao": "2025-06-23",
+    "tags": ["Cardio", "Aeróbico", "Casa"],
+    "conteudo": "Ideal para quem quer manter o condicionamento físico sem sair de casa.\n\nExemplo de treino:\n- Polichinelos - 3x30s\n- Corrida parada - 3x1min\n- Agachamento com salto - 3x12\n- Mountain climber - 3x30s\n\nDicas:\n- Mantenha-se hidratado\n- Faça um aquecimento antes de iniciar",
+    "imagens_adicionais": ["imagens/cardio.jpg"]
+  }
+] 

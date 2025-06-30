@@ -1,0 +1,1385 @@
+/*Início configuração geral */
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    box-sizing: border-box;
+
+}
+
+h2 {
+    font-size: 25px;
+    color: rgb(110, 110, 110);
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 20px;
+    color: rgb(110, 110, 110);
+    margin-bottom: 10px;
+    font-weight: bold;
+
+}
+
+h1 {
+    color: rgb(110, 110, 110);
+    margin-bottom: 40px;
+    font-weight: bold;
+
+}
+
+body {
+    margin: 50px;
+    background-color: #121212 !important;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+/*Fim configuração geral */
+
+/*Início configuração Dados pessoais */
+.box-nome, .box-sobrenome {
+    position: relative;
+    margin: 20px 0;
+
+}
+
+.input-nome, .input-sobrenome {
+    width: 100%;
+    padding: 12px 10px;
+    font-size: 16px;
+    border: 2px solid rgb(187, 187, 187);
+    border-radius: 25px;
+    outline: none;
+    background: transparent;
+
+}
+
+.label-nome, .label-sobrenome, .label-altura, .label-peso, .label-idade, .label-genero, .label-tempo {
+    background: transparent !important;
+    color: var(--primary-color);
+    padding: 0 0.3em;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+}
+
+.input-nome:focus + .label-nome,
+.input-nome:not(:placeholder-shown) + .label-nome,
+.input-sobrenome:focus + .label-sobrenome,
+.input-sobrenome:not(:placeholder-shown) + .label-sobrenome  {
+    top: -10px;
+    font-size: 12px;
+    color: rgb(63, 162, 255);
+}
+
+.box-altura, .box-peso, .box-idade {
+    position: relative;
+    margin: 20px 0;
+
+}
+
+.input-altura, .input-peso, .input-idade {
+    width: 100%;
+    padding: 12px 10px;
+    font-size: 16px;
+    border: 2px solid rgb(187, 187, 187);
+    border-radius: 25px;
+    outline: none;
+    background: transparent;
+
+}
+
+.input-altura:focus + .label-altura,
+.input-altura:not(:placeholder-shown) + .label-altura,
+.input-peso:focus + .label-peso,
+.input-peso:not(:placeholder-shown) + .label-peso,
+.input-idade:focus + .label-idade,
+.input-idade:not(:placeholder-shown) + .label-idade  {
+    top: -10px;
+    font-size: 12px;
+    color: rgb(63, 162, 255);
+}
+
+.genero {
+    margin-top: 20px;
+
+}
+
+.titulo-genero {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    color: rgb(110, 110, 110);
+
+}
+
+.input-genero {
+    display: inline-block;
+    margin-right: 15px;
+    position: relative;
+
+}
+
+.input-genero input[type="radio"] {
+    display: none;
+
+}
+
+.label-genero {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 15px;
+    border: 2px solid rgb(187, 187, 187);
+    border-radius: 25px;
+    font-size: 15px;
+    transition: all 0.5s ease;
+    background-color: white;
+    color: rgb(110, 110, 110);
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+}
+
+.input-genero input[type="radio"]:checked + .label-genero {
+    border: 2px solid var(--primary-color) !important;
+    color: var(--primary-color) !important;
+    background: rgba(255, 140, 0, 0.08);
+}
+
+.input-genero .label-genero i {
+    font-size: 18px;
+
+}
+
+.primeira-linha, .segunda-linha, .terceira-linha, .quarta-linha, .quinta-linha {
+    display: flex;
+    gap: 20px;
+    width: 75%;
+    margin: 0 auto;
+
+}
+
+.box-nome, .box-sobrenome, .box-altura, .box-peso, .box-idade, .box-genero {
+    width: 48%;
+
+}
+
+.quinta-linha {
+    margin-top: 40px;
+
+}
+
+.checkbox-dropdown {
+    display: none;
+
+}
+
+.botao-dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    color: var(--text-color);
+    border: 2px solid #fff;
+    border-radius: 24px;
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: border 0.2s, color 0.2s;
+}
+
+.conteudo-dropdown {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 110%;
+    background: #181818;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px 0 rgba(255,140,0,0.10);
+    min-width: 220px;
+    z-index: 10;
+    padding: 0.5rem 0;
+}
+
+.checkbox-dropdown:checked + .botao-dropdown {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.conteudo-dropdown label {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+
+}
+
+.conteudo-dropdown label:hover {
+    background-color: rgb(63, 162, 255);
+    color: white;
+
+}
+
+.checkbox-dropdown:checked + .botao-dropdown + .conteudo-dropdown input:checked + label {
+    background-color: rgb(63, 162, 255);
+    color: white;
+
+}
+
+.label-tempo {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.7rem 1.2rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    font-size: 1rem;
+}
+
+.label-tempo:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+input[name="tempo"]:checked + .label-tempo {
+    background: var(--primary-color);
+    color: #fff;
+    font-weight: 600;
+}
+
+#tempoSelecionado {
+    font-weight: 500;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
+/*Fim configuração Dados pessoais */
+
+/*Início configuração Preferencia de treino */
+
+.preferencia-treino {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.input-preferencia {
+    display: inline-block;
+    margin-right: 20px;
+    position: relative;
+
+}
+
+.input-preferencia input[type="radio"] {
+    display: none;
+
+}
+
+.label-preferencia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 15px;
+    border: 2px solid rgb(187, 187, 187);
+    border-radius: 25px;
+    font-size: 15px;
+    transition: all 0.5s ease;
+    background-color: white;
+    color: rgb(187, 187, 187);
+
+}
+
+.input-preferencia input[type="radio"]:checked + label {
+    background: var(--primary-color) !important;
+    color: #fff !important;
+    border: 2px solid var(--primary-color) !important;
+    box-shadow: 0 2px 12px 0 rgba(255, 140, 0, 0.15);
+}
+
+.input-preferencia label i {
+    font-size: 30px;
+    margin: 8px;
+    padding: 10px 0;
+
+}
+
+.input-preferencia label {
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    color: rgb(110, 110, 110);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    border: 2px solid #fff;
+    background: transparent;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+    padding: 12px 20px;
+    width: 120px;
+    height: 100px;
+    transition: all 0.5s ease;
+
+}
+
+.input-preferencia input[type="radio"]:checked + label {
+    background-color: rgb(63, 162, 255);
+    color: white;
+    border-color: rgb(63, 162, 255);
+    transform: scale(1.2);
+
+}
+/*Fim configuração Preferencia de treino */
+
+/*Início configuração Objetivo */
+.lista-cards {
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card-objetivo {
+    display: block;
+    cursor: pointer;
+    width: 370px;
+    max-width: 95vw;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 2px solid #fff;
+    background: #181818;
+    box-shadow: 0 2px 12px 0 rgba(255, 140, 0, 0.10);
+    transition: border 0.2s, box-shadow 0.2s, background 0.2s;
+    position: relative;
+}
+
+.card-objetivo:hover,
+.card-objetivo:focus-within {
+    border: 2.5px solid var(--primary-color);
+    box-shadow: 0 4px 24px 0 rgba(255, 140, 0, 0.18);
+}
+
+.card-objetivo input[type="radio"] {
+    display: none;
+}
+
+.card-objetivo input[type="radio"]:checked ~ .card-content,
+.card-objetivo input[type="radio"]:checked + .card-content {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.card-objetivo input[type="radio"]:checked ~ .card-content .titulo-card,
+.card-objetivo input[type="radio"]:checked + .card-content .titulo-card {
+    color: #fff;
+}
+
+.card-content {
+    padding: 1.2rem 1.2rem 1.5rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    transition: background 0.2s, color 0.2s;
+}
+
+.titulo-card {
+    color: var(--primary-color);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.imagem-overlay {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.imagem-card {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(120deg, rgba(255,140,0,0.18) 0%, rgba(255,140,0,0.32) 100%);
+    opacity: 0;
+    border-radius: 16px;
+    transition: opacity 0.2s;
+    pointer-events: none;
+}
+
+.card-objetivo:hover .overlay,
+.card-objetivo:focus-within .overlay {
+    opacity: 1;
+}
+
+.card-objetivo input[type="radio"]:checked ~ .card-content .overlay,
+.card-objetivo input[type="radio"]:checked + .card-content .overlay {
+    opacity: 0.18;
+}
+
+.subtitulo {
+    color: #ccc;
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+    text-align: center;
+}
+
+.card-objetivo input[type="radio"]:checked ~ .card-content .subtitulo,
+.card-objetivo input[type="radio"]:checked + .card-content .subtitulo {
+    color: #fff;
+}
+
+.icone-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: var(--primary-color);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 1.3rem;
+    margin: 0 auto;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 2px 8px 0 rgba(255,140,0,0.10);
+}
+
+.card-objetivo input[type="radio"]:checked ~ .card-content .icone-card,
+.card-objetivo input[type="radio"]:checked + .card-content .icone-card {
+    background: #fff;
+    color: var(--primary-color);
+    box-shadow: 0 4px 16px 0 rgba(255,140,0,0.18);
+}
+
+.card-objetivo:hover .icone-card {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+@media (max-width: 900px) {
+    .lista-cards {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+    .card-objetivo {
+        width: 98vw;
+        max-width: 420px;
+    }
+}
+
+/*Início configuração Nivel de experiencia */
+.container-nivel {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    list-style: none;
+    padding-left: 0;
+    margin-top: 2rem;
+}
+
+.item-nivel {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.item-nivel img {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1rem auto;
+    display: block;
+    animation: flame-flicker 1.2s infinite alternate ease-in-out;
+}
+
+@keyframes flame-flicker {
+    0% { transform: scaleY(1) scaleX(1) translateY(0); filter: brightness(1); }
+    40% { transform: scaleY(1.05) scaleX(0.98) translateY(-2px); filter: brightness(1.1); }
+    60% { transform: scaleY(0.97) scaleX(1.03) translateY(2px); filter: brightness(0.95); }
+    100% { transform: scaleY(1) scaleX(1) translateY(0); filter: brightness(1); }
+}
+
+.item-nivel h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #ff6b00 0%, #ffd700 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.input-nivel:checked + .item-nivel,
+.card-nivel.selected {
+    border-color: #ff6b00;
+    box-shadow: 0 0 24px 0 rgba(255, 107, 0, 0.25);
+    background: rgba(255, 107, 0, 0.05);
+}
+
+.input-nivel:checked + .item-nivel h3,
+.input-nivel:checked + .item-nivel p,
+.input-nivel:checked + .item-nivel label {
+    color: #fff !important;
+}
+
+.item-nivel:hover {
+    background: rgba(255, 140, 0, 0.15);
+    border: 2.5px solid var(--primary-color);
+}
+
+.item-nivel p {
+    color: var(--primary-color);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.item-nivel[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 50%;
+    bottom: 110%;
+    transform: translateX(-50%);
+    background: rgba(30, 30, 30, 0.98);
+    color: #fff;
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    white-space: nowrap;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    z-index: 10;
+    opacity: 1;
+    pointer-events: none;
+    transition: opacity 0.2s;
+}
+
+.item-nivel[data-tooltip]::after {
+    opacity: 0;
+}
+
+.item-nivel[data-tooltip]:hover::after {
+    opacity: 1;
+}
+
+/*Início configuração botão terminar login */
+.botao-login {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    
+}
+
+.botao-login button {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    padding: 0.7rem 2.5rem;
+    font-size: 1.3rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    box-shadow: 0 2px 12px 0 rgba(255, 140, 0, 0.10);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    outline: none;
+    margin: 2rem auto 0 auto;
+    display: block;
+}
+
+.botao-login button:hover {
+    background: #cc7000;
+    color: #fff;
+    box-shadow: 0 4px 24px 0 rgba(255, 140, 0, 0.18);
+}
+
+.texto-butaologin {
+    margin: 0;
+    font-size: 1.3rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: inherit;
+}
+
+:root {
+    --bg-color: #121212;
+    --text-color: #fff;
+    --primary-color: #ff8c00;
+    --secondary-color: #ffd700;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
+label, input, button, p, span, li, a {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--secondary-color);
+}
+
+input[type="text"], input[type="number"], input[type="email"], input[type="password"] {
+    background: transparent !important;
+    color: var(--text-color);
+    border: 2px solid #fff;
+    border-radius: 24px;
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    border-color: var(--primary-color);
+}
+
+/* Garanta que as fontes estejam importadas no HTML */
+
+.nova-tempo-container {
+    margin: 2.5rem 0 2rem 0;
+    text-align: center;
+}
+.titulo-tempo {
+    font-family: 'Bebas Neue', sans-serif;
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 1px;
+}
+.botoes-tempo {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+}
+.botao-tempo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: var(--text-color);
+    border: 2px solid #fff;
+    border-radius: 24px;
+    padding: 0.7rem 1.8rem;
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border 0.2s, box-shadow 0.2s;
+    font-weight: 500;
+}
+input[name="tempo"] {
+    display: none;
+}
+input[name="tempo"]:checked + .botao-tempo {
+    background: var(--primary-color);
+    color: #fff;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 2px 12px 0 rgba(255, 140, 0, 0.15);
+}
+.botao-tempo:hover {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+@media (max-width: 600px) {
+    .botoes-tempo {
+        flex-direction: column;
+        gap: 0.7rem;
+    }
+    .botao-tempo {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+.primeira-fileira {
+    margin-bottom: 2.5rem;
+}
+.segunda-fileira {
+    margin-top: 2.5rem;
+}
+
+.modal-bemvindo {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.75);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.modal-conteudo {
+    background: #181818;
+    border-radius: 24px;
+    padding: 2.5rem 2rem 2rem 2rem;
+    box-shadow: 0 8px 32px 0 rgba(255, 140, 0, 0.18);
+    max-width: 400px;
+    width: 90vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.modal-mensagem {
+    color: #fff;
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+.modal-botoes {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+}
+.btn-modal {
+    padding: 0.7rem 1.5rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.btn-modal.primario {
+    background: var(--primary-color);
+    color: #fff;
+}
+.btn-modal.primario:hover {
+    background: #cc7000;
+}
+.btn-modal.secundario {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+.btn-modal.secundario:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+@media (max-width: 500px) {
+    .modal-conteudo {
+        padding: 1.2rem 0.5rem 1.5rem 0.5rem;
+    }
+    .modal-mensagem {
+        font-size: 1rem;
+    }
+    .modal-botoes {
+        flex-direction: column;
+        gap: 0.7rem;
+    }
+}
+
+.objetivo-indefinido {
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+.texto-indefinido {
+    color: #ccc;
+    font-size: 1.08rem;
+    margin-bottom: 0.7rem;
+    font-family: 'Poppins', sans-serif;
+}
+.btn-indefinido {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 0.6rem 1.6rem;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 12px 0 rgba(255, 140, 0, 0.10);
+}
+.btn-indefinido:hover {
+    background: #cc7000;
+    color: #fff;
+    box-shadow: 0 4px 24px 0 rgba(255, 140, 0, 0.18);
+}
+
+.barra-progresso {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 2.5rem auto 2.5rem auto;
+    max-width: 600px;
+    width: 100%;
+}
+.etapa {
+    background: #222;
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    opacity: 0.7;
+    transition: background 0.3s, color 0.3s, opacity 0.3s;
+    border: 2px solid #333;
+}
+.etapa-ativa {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: #191919;
+    opacity: 1;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 2px 12px 0 rgba(255, 140, 0, 0.10);
+}
+@media (max-width: 600px) {
+    .barra-progresso {
+        flex-direction: column;
+        gap: 0.7rem;
+    }
+    .etapa {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Estilos para os containers de input com ícones */
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.input-icon {
+    position: absolute;
+    left: 12px;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.input-container input {
+    padding-left: 40px !important;
+    transition: all 0.3s ease;
+    border: 2px solid #444;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    color: #fff;
+}
+
+.input-container input:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: #ff6b00;
+    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
+}
+
+.input-container input:focus + .input-icon {
+    color: #ff6b00;
+}
+
+.input-focus-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ff6b00;
+    transition: width 0.3s ease;
+}
+
+.input-container input:focus ~ .input-focus-border {
+    width: 100%;
+}
+
+/* Toggle password button */
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.toggle-password:hover {
+    color: #ff6b00;
+}
+
+/* Validação visual dos inputs */
+.input-container input.valid {
+    border-color: #4CAF50;
+    background-color: rgba(76, 175, 80, 0.1);
+}
+
+.input-container input.invalid {
+    border-color: #f44336;
+    background-color: rgba(244, 67, 54, 0.1);
+}
+
+/* Animação suave para o modal */
+.modal-bemvindo {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Melhorias na barra de progresso */
+.barra-progresso {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.barra-progresso::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.etapa {
+    position: relative;
+    z-index: 2;
+    background-color: #1a1a1a;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.etapa-ativa {
+    background-color: #ff6b00;
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 107, 0, 0.3);
+}
+
+/* Melhorias nos botões */
+.btn-modal, button[type="submit"] {
+    transition: all 0.3s ease;
+    transform: translateY(0);
+}
+
+.btn-modal:hover, button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
+}
+
+.btn-modal:active, button[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+/* Responsividade para os inputs */
+@media (max-width: 768px) {
+    .input-container {
+        width: 100%;
+    }
+    
+    .input-container input {
+        width: 100%;
+    }
+    
+    .primeira-linha, .segunda-linha, .terceira-linha, .quarta-linha {
+        flex-direction: column;
+    }
+}
+
+/* Melhorias nos cards de objetivo */
+.card-objetivo {
+    transition: all 0.3s ease;
+}
+
+.card-objetivo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-content {
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay {
+    transition: all 0.3s ease;
+}
+
+.card-objetivo:hover .overlay {
+    background-color: rgba(255, 107, 0, 0.2);
+}
+
+/* Acessibilidade */
+input:focus, button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.3);
+}
+
+/* Placeholder com transparência */
+::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    transition: opacity 0.3s ease;
+}
+
+input:focus::placeholder {
+    opacity: 0.7;
+}
+
+.titulo-moderno {
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    font-weight: 800;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #ff6b00 0%, #ffd700 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    position: relative;
+    text-shadow: 0 2px 12px rgba(255, 107, 0, 0.15);
+    display: block;
+    margin: 0 auto 0.5rem auto;
+}
+
+.titulo-moderno::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #ff6b00 0%, #ffd700 100%);
+    margin: 8px auto 0 auto;
+    box-shadow: 0 2px 8px rgba(255, 107, 0, 0.10);
+}
+
+.titulo-tempo {
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .titulo-moderno {
+        font-size: 1.5rem;
+        text-align: center;
+        margin: 0 auto 0.5rem auto;
+    }
+    .titulo-moderno::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.titulo-espaco {
+    margin-bottom: 2.5rem !important;
+}
+
+.card-nivel {
+    transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+    cursor: pointer;
+    border-radius: 24px;
+    background: #181818;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    border: 2px solid #fff;
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+    text-align: center;
+    flex: 1 1 250px;
+    min-width: 220px;
+    max-width: 320px;
+    position: relative;
+}
+
+.card-nivel:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(255, 107, 0, 0.15);
+    border-color: #ff6b00;
+}
+
+.input-nivel:checked + .item-nivel,
+.card-nivel.selected {
+    border-color: #ff6b00;
+    box-shadow: 0 0 24px 0 rgba(255, 107, 0, 0.25);
+    background: rgba(255, 107, 0, 0.05);
+}
+
+@media (max-width: 900px) {
+    .container-nivel {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .card-nivel {
+        max-width: 90vw;
+    }
+}
+
+/* Esconde bullets de listas dentro de container-nivel, caso existam */
+.container-nivel li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container-nivel > label::before,
+.container-nivel > label::after {
+    display: none !important;
+    content: none !important;
+}
+
+.container-nivel input[type="radio"] {
+    display: none;
+}
+
+.modal-objetivo {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modal-quiz-conteudo {
+    background: #181818;
+    border-radius: 20px;
+    padding: 2.5rem 2rem 2rem 2rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    max-width: 400px;
+    width: 95vw;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    animation: fadeIn 0.3s;
+}
+
+.fechar-modal-quiz {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.2s;
+    z-index: 2;
+}
+.fechar-modal-quiz:hover {
+    color: #ff6b00;
+}
+
+.pergunta h3, .resultado-quiz h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: #ff6b00;
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    font-weight: 700;
+}
+
+.quiz-btn {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.9rem 0;
+    background: #222;
+    color: #fff;
+    border: 2px solid #ff6b00;
+    border-radius: 16px;
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+}
+.quiz-btn:hover, .quiz-btn:focus {
+    background: #ff6b00;
+    color: #181818;
+    border-color: #ffd700;
+}
+.quiz-btn.secundario {
+    background: transparent;
+    color: #ff6b00;
+    border: 2px solid #ff6b00;
+}
+.quiz-btn.secundario:hover {
+    background: #ff6b00;
+    color: #fff;
+}
+
+.resultado-quiz p {
+    color: #fff;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 600px) {
+    .modal-quiz-conteudo {
+        padding: 1.2rem 0.5rem 1.5rem 0.5rem;
+        max-width: 98vw;
+    }
+    .fechar-modal-quiz {
+        top: 8px;
+        right: 12px;
+    }
+}
+
+.campo-foto-perfil.melhorado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+    margin-top: 16px;
+    gap: 4px;
+    width: 100%;
+}
+
+.campo-foto-perfil.melhorado .titulo-moderno {
+    margin-bottom: 10px;
+}
+
+.label-foto-perfil {
+    align-self: center;
+}
+
+.foto-upload-row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    width: auto;
+    justify-content: center;
+}
+
+.foto-preview-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0;
+}
+
+.foto-preview {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2.5px solid var(--primary-color);
+    box-shadow: 0 2px 10px rgba(255, 140, 0, 0.10);
+    background: var(--card-bg);
+    transition: border 0.2s, box-shadow 0.2s, filter 0.2s;
+}
+.foto-preview:hover {
+    filter: brightness(1.08) drop-shadow(0 0 8px var(--secondary-color));
+    border-color: var(--secondary-color);
+}
+
+.input-foto-perfil {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    padding: 10px 28px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 0;
+    box-shadow: 0 2px 8px rgba(255, 140, 0, 0.08);
+    transition: background 0.2s, color 0.2s;
+    width: auto;
+    max-width: 220px;
+    overflow: hidden;
+}
+.input-foto-perfil::-webkit-file-upload-button {
+    visibility: hidden;
+}
+.input-foto-perfil::before {
+    content: 'Selecionar Foto';
+    display: inline-block;
+    background: transparent;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px 28px;
+    border-radius: 18px;
+    cursor: pointer;
+}
+.input-foto-perfil:hover::before {
+    background: var(--secondary-color);
+    color: #222;
+}
+.input-foto-perfil:focus {
+    outline: 2px solid var(--secondary-color);
+}
+
+/* Esconde o nome do arquivo selecionado */
+.input-foto-perfil {
+    color: transparent;
+}
+.input-foto-perfil:focus {
+    color: transparent;
+}
+
+@media (max-width: 700px) {
+    .campo-foto-perfil.melhorado {
+        margin-bottom: 18px;
+        margin-top: 10px;
+        gap: 8px;
+    }
+    .foto-upload-row {
+        gap: 10px;
+    }
+}

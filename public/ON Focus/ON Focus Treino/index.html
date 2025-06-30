@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<!-- Define o idioma e o tema inicial do site -->
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <!-- Configurações básicas do documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinos - ON Focus</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    
+    <!-- Importação das fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- Arquivo de estilos principal -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Overlay para o menu mobile -->
+    <div class="menu-overlay"></div>
+    
+    <!-- Header Desktop - Contém a barra de pesquisa e botão de tema -->
+    <div class="desktop-header">
+        <div class="theme-search-container">
+            <!-- Barra de pesquisa desktop -->
+            <div class="search-bar">
+                <input type="text" placeholder="Pesquisar...">
+                <button type="button">🔍</button>
+            </div>
+            <!-- Botão de alternar tema -->
+            <button class="theme-toggle">
+                <span class="theme-toggle-dark">🌙</span>
+                <span class="theme-toggle-light">☀️</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Header Mobile - Versão compacta para dispositivos móveis -->
+    <div class="mobile-header">
+        <!-- Botão do menu hamburguer -->
+        <div class="mobile-menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <!-- Logo do site versão mobile -->
+        <div class="logo">
+            <span class="logo-text">ON</span>
+            <span class="logo-dot"></span>
+            <span class="logo-text">Focus</span>
+        </div>
+        <!-- Ações mobile (pesquisa e tema) -->
+        <div class="mobile-actions">
+            <button class="search-toggle" title="Pesquisar">🔍</button>
+            <button class="theme-toggle" title="Alternar tema">
+                <span class="theme-toggle-dark">🌙</span>
+                <span class="theme-toggle-light">☀️</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal de busca - Interface de pesquisa moderna -->
+    <div class="search-modal">
+        <div class="search-modal-content">
+            <div class="search-header">
+                <div class="search-bar">
+                    <!-- Ícone de pesquisa SVG -->
+                    <button type="button" class="search-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <!-- Campo de pesquisa -->
+                    <input type="text" placeholder="O que você procura?" autofocus>
+                    <!-- Botão de fechar SVG -->
+                    <button type="button" class="close-search" aria-label="Fechar busca">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Área de sugestões de busca -->
+            <div class="search-suggestions">
+                <h3>Sugestões de busca</h3>
+                <div class="suggestion-tags">
+                    <button class="suggestion-tag">Treino HIIT</button>
+                    <button class="suggestion-tag">Dieta Low Carb</button>
+                    <button class="suggestion-tag">Mindfulness</button>
+                    <button class="suggestion-tag">Ganho muscular</button>
+                </div>
+            </div>
+            <!-- Área para resultados da pesquisa -->
+            <div class="search-results"></div>
+        </div>
+    </div>
+
+    <!-- Botão de voltar ao topo -->
+    <button class="back-to-top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <!-- Menu lateral (sidebar) -->
+    <aside>
+        <!-- Logo principal -->
+        <a href="../ON Focus HomePage/index.html" class="logo-link">
+            <img src="imagens/logo.png" alt="Logo ON Focus" class="logo">
+        </a>
+        <div class="divider"></div>
+        <!-- Seção do perfil do usuário -->
+        <div class="profile-section">
+            <div class="profile-image">
+                <img id="user-avatar" src="imagens/download.png" alt="Foto do Perfil" class="avatar">
+            </div>
+            <div class="profile-info">
+                <h3 id="user-name" class="profile-name">Visitante</h3>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <!-- Menu de navegação principal -->
+        <nav class="menu-topics">
+            <ul>
+                <li><a href="../ON Focus Treino/index.html"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" viewBox="0 0 16 16"><path d="M1 6.5a.5.5 0 0 1 .5-.5h1V5a1 1 0 0 1 1-1h1V2.5a.5.5 0 0 1 1 0V4h2V2.5a.5.5 0 0 1 1 0V4h1a1 1 0 0 1 1 1v1h1a.5.5 0 0 1 0 1h-1v2h1a.5.5 0 0 1 0 1h-1v1a1 1 0 0 1-1 1h-1v1.5a.5.5 0 0 1-1 0V12H6v1.5a.5.5 0 0 1-1 0V12H4a1 1 0 0 1-1-1v-1h-1a.5.5 0 0 1 0-1h1V7h-1a.5.5 0 0 1-.5-.5zm2.5.5v2h1v-2h-1zm7 0v2h1v-2h-1z"/></svg> TREINOS</a></li>
+                <li><a href="../ON Focus Dieta/index.html"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0-1A6 6 0 1 1 8 2a6 6 0 0 1 0 12zm3.5-6a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2a.5.5 0 0 1 .5-.5zm-7 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2a.5.5 0 0 1 .5-.5zm2.5 1a1 1 0 1 1 2 0 1 1 0 0 1-2 0z"/></svg> DIETAS</a></li>
+                <li><a href="../ON Focus Blog/index.html"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" viewBox="0 0 16 16"><path d="M4 1.5A1.5 1.5 0 0 0 2.5 3v10A1.5 1.5 0 0 0 4 14.5h8a1.5 1.5 0 0 0 1.5-1.5V3A1.5 1.5 0 0 0 12 1.5H4zm0 1h8A.5.5 0 0 1 12.5 3v10a.5.5 0 0 1-.5.5H4a.5.5 0 0 1-.5-.5V3A.5.5 0 0 1 4 2.5zm1 2a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5z"/></svg> BLOG</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo principal -->
+    <main class="content">
+        <header class="intro">
+            <h1>ON Focus Treinos</h1>
+        </header>
+
+        <!-- Campo de Peso, Altura e IMC -->
+        <section class="imc-section">
+            <div class="imc-card">
+                <div class="imc-info">
+                    <span class="imc-label">Peso:</span>
+                    <span id="user-peso" class="imc-value">-- kg</span>
+                </div>
+                <div class="imc-info">
+                    <span class="imc-label">Altura:</span>
+                    <span id="user-altura" class="imc-value">-- m</span>
+                </div>
+                <div class="imc-info">
+                    <span class="imc-label">IMC:</span>
+                    <span id="user-imc" class="imc-value">--</span>
+                </div>
+                <div class="imc-info">
+                    <span class="imc-label">Classificação:</span>
+                    <span id="imc-classificacao" class="imc-value">--</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Favoritos -->
+        <section class="favoritos-section" id="favoritos-section" style="display: none;">
+            <h2 class="favoritos-title">
+                <i class="fa fa-heart"></i> Meus Treinos Favoritos
+            </h2>
+            <div class="favoritos-grid" id="favoritos-grid">
+                <!-- Treinos favoritos serão inseridos aqui dinamicamente -->
+            </div>
+        </section>
+
+        <!-- Tópicos de Treinos -->
+        <section class="treinos-topics-section">
+            <h2 class="treinos-topics-title">Tópicos de Treinos</h2>
+            <div class="treinos-topics-grid">
+                <button class="treino-topic-card">Pernas</button>
+                <button class="treino-topic-card">Foco na Queima</button>
+                <button class="treino-topic-card">Mobilidade</button>
+                <button class="treino-topic-card">Braços</button>
+                <button class="treino-topic-card">Abdômen</button>
+                <button class="treino-topic-card">Costas</button>
+                <button class="treino-topic-card">Peito</button>
+                <button class="treino-topic-card">Cardio</button>
+            </div>
+        </section>
+
+        <!-- Treinos Gerais -->
+        <section class="treinos-gerais-section">
+            <h2 class="treinos-gerais-title">Treinos Gerais</h2>
+            <div class="treinos-gerais-grid" id="treinos-grid">
+                <div class="treino-card" data-treino-id="1">
+                    <div class="treino-card-header">
+                        <h3 class="treino-card-title">Treino Full Body</h3>
+                        <button class="favorito-btn" data-treino-id="1" title="Adicionar aos favoritos">
+                            <i class="fa fa-heart-o"></i>
+                        </button>
+                    </div>
+                    <p class="treino-card-desc">Treino completo para o corpo todo, ideal para iniciantes e intermediários.</p>
+                    <button class="treino-card-btn">Ver Detalhes</button>
+                </div>
+                <div class="treino-card" data-treino-id="2">
+                    <div class="treino-card-header">
+                        <h3 class="treino-card-title">HIIT 20 Minutos</h3>
+                        <button class="favorito-btn" data-treino-id="2" title="Adicionar aos favoritos">
+                            <i class="fa fa-heart-o"></i>
+                        </button>
+                    </div>
+                    <p class="treino-card-desc">Treino intenso de alta queima calórica em pouco tempo.</p>
+                    <button class="treino-card-btn">Ver Detalhes</button>
+                </div>
+                <div class="treino-card" data-treino-id="3">
+                    <div class="treino-card-header">
+                        <h3 class="treino-card-title">Alongamento e Mobilidade</h3>
+                        <button class="favorito-btn" data-treino-id="3" title="Adicionar aos favoritos">
+                            <i class="fa fa-heart-o"></i>
+                        </button>
+                    </div>
+                    <p class="treino-card-desc">Série de exercícios para melhorar a flexibilidade e prevenir lesões.</p>
+                    <button class="treino-card-btn">Ver Detalhes</button>
+                </div>
+                <div class="treino-card" data-treino-id="4">
+                    <div class="treino-card-header">
+                        <h3 class="treino-card-title">Treino de Pernas Avançado</h3>
+                        <button class="favorito-btn" data-treino-id="4" title="Adicionar aos favoritos">
+                            <i class="fa fa-heart-o"></i>
+                        </button>
+                    </div>
+                    <p class="treino-card-desc">Foque no fortalecimento e hipertrofia das pernas com exercícios avançados.</p>
+                    <button class="treino-card-btn">Ver Detalhes</button>
+                </div>
+                <div class="treino-card">
+                    <h3 class="treino-card-title">Treino de Braços e Ombros</h3>
+                    <p class="treino-card-desc">Rotina para definição e força dos membros superiores.</p>
+                    <button class="treino-card-btn">Ver Detalhes</button>
+                </div>
+                <div class="treino-card">
+                    <h3 class="treino-card-title">Treino Cardio em Casa</h3>
+                    <p class="treino-card-desc">Exercícios aeróbicos para fazer em casa, sem equipamentos.</p>
+                    <button class="treino-card-btn">Ver Detalhes</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre ON Focus</h3>
+                <p>Seu destino diário para as últimas novidades e tendências do mundo fitness, nutrição e bem-estar.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Treinos</a></li>
+                    <li><a href="#">Dietas</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link">📱 Instagram</a>
+                    <a href="#" class="social-link">🐦 Twitter</a>
+                    <a href="#" class="social-link">📘 Facebook</a>
+                    <a href="#" class="social-link">🎥 YouTube</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ON Focus Blog. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

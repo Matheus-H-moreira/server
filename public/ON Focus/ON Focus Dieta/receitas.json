@@ -1,0 +1,138 @@
+[
+  {
+    "id": 1,
+    "nome": "Salada Colorida de Quinoa",
+    "imagem": "imagens/prato.jpg",
+    "ingredientes": [
+      "1 xícara de quinoa",
+      "2 xícaras de água",
+      "1 cenoura ralada",
+      "1/2 pimentão vermelho picado",
+      "1/2 pepino picado",
+      "1/2 xícara de milho",
+      "1/2 xícara de ervilha",
+      "Salsinha a gosto",
+      "Sal, azeite e limão a gosto"
+    ],
+    "modo_preparo": [
+      "Lave a quinoa e cozinhe na água até secar.",
+      "Deixe esfriar e misture com os demais ingredientes.",
+      "Tempere com sal, azeite e limão. Sirva gelada."
+    ],
+    "tempo_preparo": "20 minutos",
+    "rendimento": "4 porções",
+    "calorias": 180,
+    "tags": ["Vegetariana", "Saudável", "Rápida"],
+    "descricao": "Uma salada leve, nutritiva e refrescante, perfeita para dias quentes ou como acompanhamento."
+  },
+  {
+    "id": 2,
+    "nome": "Frango Grelhado com Batata Doce",
+    "imagem": "imagens/ganho.jpg",
+    "ingredientes": [
+      "2 filés de peito de frango",
+      "1 batata doce média",
+      "1 colher de sopa de azeite",
+      "Sal, pimenta e ervas finas a gosto"
+    ],
+    "modo_preparo": [
+      "Tempere o frango com sal, pimenta e ervas.",
+      "Grelhe em fogo médio até dourar.",
+      "Cozinhe a batata doce em rodelas até ficar macia.",
+      "Sirva o frango acompanhado da batata doce regada com azeite."
+    ],
+    "tempo_preparo": "30 minutos",
+    "rendimento": "2 porções",
+    "calorias": 350,
+    "tags": ["Proteína", "Fitness", "Sem Glúten"],
+    "descricao": "Uma refeição completa, rica em proteínas e carboidratos de baixo índice glicêmico."
+  },
+  {
+    "id": 3,
+    "nome": "Omelete de Espinafre e Queijo",
+    "imagem": "imagens/sono.jpg",
+    "ingredientes": [
+      "2 ovos",
+      "1/2 xícara de espinafre picado",
+      "2 colheres de sopa de queijo branco",
+      "Sal e pimenta a gosto",
+      "1 fio de azeite"
+    ],
+    "modo_preparo": [
+      "Bata os ovos com sal e pimenta.",
+      "Aqueça o azeite, refogue o espinafre e adicione os ovos.",
+      "Coloque o queijo e dobre a omelete. Cozinhe até firmar."
+    ],
+    "tempo_preparo": "10 minutos",
+    "rendimento": "1 porção",
+    "calorias": 210,
+    "tags": ["Café da Manhã", "Low Carb", "Rápida"],
+    "descricao": "Omelete nutritiva, ideal para um café da manhã reforçado ou lanche saudável."
+  },
+  {
+    "id": 4,
+    "nome": "Panqueca Integral de Banana",
+    "imagem": "imagens/mindset.jpg",
+    "ingredientes": [
+      "1 banana madura amassada",
+      "1 ovo",
+      "2 colheres de sopa de aveia em flocos",
+      "Canela a gosto"
+    ],
+    "modo_preparo": [
+      "Misture todos os ingredientes até formar uma massa homogênea.",
+      "Aqueça uma frigideira antiaderente e despeje a massa.",
+      "Cozinhe dos dois lados até dourar. Sirva com frutas."
+    ],
+    "tempo_preparo": "15 minutos",
+    "rendimento": "2 panquecas",
+    "calorias": 160,
+    "tags": ["Doce Saudável", "Sem Açúcar", "Integral"],
+    "descricao": "Panqueca doce, sem açúcar, perfeita para café da manhã ou lanche."
+  },
+  {
+    "id": 5,
+    "nome": "Sopa Detox de Legumes",
+    "imagem": "imagens/jejum.jpg",
+    "ingredientes": [
+      "1 abobrinha picada",
+      "1 cenoura picada",
+      "1 batata pequena",
+      "1 tomate",
+      "1 dente de alho",
+      "1 colher de sopa de azeite",
+      "Sal e ervas a gosto"
+    ],
+    "modo_preparo": [
+      "Refogue o alho no azeite, adicione os legumes e cubra com água.",
+      "Cozinhe até amaciar, tempere e bata no liquidificador se desejar uma sopa cremosa."
+    ],
+    "tempo_preparo": "25 minutos",
+    "rendimento": "3 porções",
+    "calorias": 90,
+    "tags": ["Detox", "Vegana", "Jantar Leve"],
+    "descricao": "Sopa leve, rica em fibras e nutrientes, ideal para refeições noturnas."
+  },
+  {
+    "id": 6,
+    "nome": "Mingau Proteico de Aveia",
+    "imagem": "imagens/treino.jpg",
+    "ingredientes": [
+      "3 colheres de sopa de aveia em flocos",
+      "200ml de leite ou bebida vegetal",
+      "1 scoop de whey protein (opcional)",
+      "1 colher de chá de mel",
+      "Frutas para servir"
+    ],
+    "modo_preparo": [
+      "Misture a aveia e o leite em uma panela e cozinhe até engrossar.",
+      "Adicione o whey e o mel, misture bem.",
+      "Sirva com frutas picadas por cima."
+    ],
+    "tempo_preparo": "10 minutos",
+    "rendimento": "1 porção",
+    "calorias": 220,
+    "tags": ["Café da Manhã", "Proteico", "Fitness"],
+    "descricao": "Mingau cremoso, ideal para pré ou pós-treino, rico em proteínas e energia."
+  }
+] 

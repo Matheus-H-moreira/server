@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - ON Focus</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    
+    <!-- Importação das fontes do Google -->
+    <link rel="stylesheet" href="style_menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <aside class="aside-menu">
+        <a href="../ON Focus HomePage/index.html" class="botao-voltar-site"><i class="fa fa-arrow-left"></i> Voltar</a>
+        <a href="/ON Focus/ON Focus Login/landing.html" class="botao-landing">Landing Page</a>
+        <div class="logo-menu">
+            <img src="../ON Focus HomePage/imagens/logo.png" alt="Logo ON Focus">
+        </div>
+        <div class="perfil-card">
+            <div class="foto-perfil">
+                <img src="/ON Focus/ON Focus Blog/imagens/download.png" alt="Foto de perfil" id="fotoPerfilMenu">
+            </div>
+            <div class="dados-perfil">
+                <h2 id="nomePerfil">Nome do Usuário</h2>
+                <p id="idadePerfil">Idade: --</p>
+                <p id="generoPerfil">Gênero: --</p>
+            </div>
+        </div>
+        <button id="logout-btn-menu" class="logout-button-menu">
+            <i class="fa fa-sign-out-alt"></i> Sair
+        </button>
+    </aside>
+    <main class="main-menu">
+        <section class="perfil-section">
+            <h1>Meu Perfil</h1>
+            <div class="status-grid">
+                <div class="status-item">
+                    <span class="status-label">Altura</span>
+                    <span class="status-value" id="alturaPerfil">--</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Peso</span>
+                    <span class="status-value" id="pesoPerfil">--</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Tempo disponível</span>
+                    <span class="status-value" id="tempoPerfil">--</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Preferência</span>
+                    <span class="status-value" id="preferenciaPerfil">--</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Objetivo</span>
+                    <span class="status-value" id="objetivoPerfil">--</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Experiência</span>
+                    <span class="status-value" id="experienciaPerfil">--</span>
+                </div>
+            </div>
+            <button id="botaoEditarPerfil" class="botao-editar-perfil"><i class="fa fa-pen"></i> Editar perfil</button>
+        </section>
+    </main>
+
+    <!-- Modal de Edição de Perfil -->
+    <div id="edit-profile-modal" class="modal-overlay-menu" style="display: none;">
+        <div class="modal-content-menu">
+            <button id="close-modal-btn" class="modal-close-btn">&times;</button>
+            <h2>Editar Perfil</h2>
+            <form id="edit-profile-form">
+                <div class="foto-upload-row" style="justify-content:center; margin-bottom:18px;">
+                    <label class="foto-preview-wrapper" id="labelFotoEditar" style="cursor:pointer; position:relative;">
+                        <img id="fotoPreviewEditar" class="foto-preview" src="/ON Focus/ON Focus Blog/imagens/download.png" alt="Prévia da Foto de Perfil" style="width:70px; height:70px; border-radius:50%; object-fit:cover; border:2px solid #fff;">
+                        <span class="camera-icon-overlay" style="position:absolute; bottom:0; right:0; background:rgba(0,0,0,0.7); border-radius:50%; padding:6px;">
+                            <i class="fa fa-camera" style="color:#fff; font-size:1.1em;"></i>
+                        </span>
+                        <input type="file" id="fotoEditar" name="fotoEditar" accept="image/*" class="input-foto-perfil" style="display:none;">
+                    </label>
+                </div>
+                <div class="form-grid">
+                    <!-- Nome e Sobrenome -->
+                    <div class="form-group">
+                        <label for="nomeEditar">Nome</label>
+                        <input type="text" id="nomeEditar" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sobrenomeEditar">Sobrenome</label>
+                        <input type="text" id="sobrenomeEditar" required>
+                    </div>
+
+                    <!-- Altura e Peso -->
+                    <div class="form-group">
+                        <label for="alturaEditar">Altura (m)</label>
+                        <input type="number" id="alturaEditar" required step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="pesoEditar">Peso (kg)</label>
+                        <input type="number" id="pesoEditar" required>
+                    </div>
+
+                    <!-- Idade -->
+                    <div class="form-group">
+                        <label for="idadeEditar">Idade</label>
+                        <input type="number" id="idadeEditar" required>
+                    </div>
+
+                    <!-- Gênero -->
+                    <div class="form-group-radio">
+                        <label>Gênero</label>
+                        <div class="radio-options">
+                            <input type="radio" id="generoMasculinoEditar" name="generoEditar" value="Masculino">
+                            <label for="generoMasculinoEditar">Masculino</label>
+                            <input type="radio" id="generoFemininoEditar" name="generoEditar" value="Feminino">
+                            <label for="generoFemininoEditar">Feminino</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botões de Ação -->
+                <div class="form-actions">
+                    <button type="submit" class="btn-salvar">Salvar Alterações</button>
+                    <button type="button" id="cancel-edit-btn" class="btn-cancelar">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de confirmação de logout -->
+    <div id="logout-modal" class="modal-overlay">
+        <div class="modal-content logout-modal">
+            <div class="modal-header">
+                <h3><i class="fa fa-sign-out-alt"></i> Confirmar Logout</h3>
+            </div>
+            <div class="modal-body">
+                <p>Tem certeza que deseja sair da sua conta?</p>
+                <p class="modal-subtitle">Você será redirecionado para a página de login.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="cancel-logout" class="btn-cancel">Cancelar</button>
+                <button id="confirm-logout" class="btn-confirm">Sim, Sair</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

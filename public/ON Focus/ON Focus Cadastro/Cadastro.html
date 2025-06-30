@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - ON Focus</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    
+    <!-- Importação das fontes do Google -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div id="modal-bemvindo" class="modal-bemvindo">
+        <div class="modal-conteudo">
+            <p class="modal-mensagem">Para criar uma experiência personalizada, precisamos saber um pouco mais sobre você. Fique à vontade para avançar sem preencher, se preferir!</p>
+            <div class="modal-botoes">
+                <button onclick="history.back()" class="btn-modal secundario">Voltar</button>
+                <button onclick="fecharModal()" class="btn-modal primario">Preencher dados</button>
+            </div>
+        </div>
+    </div>
+    <div id="modal-objetivo" class="modal-objetivo" style="display:none;">
+        <div class="modal-quiz-conteudo">
+            <button class="fechar-modal-quiz" onclick="fecharModalObjetivo()">&times;</button>
+            <div id="quiz-perguntas">
+                <div class="pergunta" data-step="1">
+                    <h3>Qual seu principal motivo para buscar o ON Focus?</h3>
+                    <button class="quiz-btn" data-value="Saúde">Saúde</button>
+                    <button class="quiz-btn" data-value="Estética">Estética</button>
+                    <button class="quiz-btn" data-value="Performance">Performance</button>
+                    <button class="quiz-btn" data-value="Outro">Outro</button>
+                </div>
+                <div class="pergunta" data-step="2" style="display:none;">
+                    <h3>Você já pratica alguma atividade física?</h3>
+                    <button class="quiz-btn" data-value="Sim">Sim</button>
+                    <button class="quiz-btn" data-value="Não">Não</button>
+                </div>
+                <div class="pergunta" data-step="3" style="display:none;">
+                    <h3>Qual seu maior desafio atualmente?</h3>
+                    <button class="quiz-btn" data-value="Tempo">Falta de tempo</button>
+                    <button class="quiz-btn" data-value="Motivação">Motivação</button>
+                    <button class="quiz-btn" data-value="Orientação">Orientação</button>
+                    <button class="quiz-btn" data-value="Outro">Outro</button>
+                </div>
+                <div class="pergunta" data-step="4" style="display:none;">
+                    <h3>O que você gostaria de conquistar nos próximos meses?</h3>
+                    <button class="quiz-btn" data-value="Ganhar massa">Ganhar massa muscular</button>
+                    <button class="quiz-btn" data-value="Perder peso">Perder peso</button>
+                    <button class="quiz-btn" data-value="Saúde">Melhorar saúde</button>
+                    <button class="quiz-btn" data-value="Condicionamento">Condicionamento físico</button>
+                </div>
+                <div class="resultado-quiz" style="display:none;">
+                    <h3 id="titulo-resultado"></h3>
+                    <p id="texto-resultado"></p>
+                    <button class="quiz-btn" id="aceitar-objetivo">Aceitar sugestão</button>
+                    <button class="quiz-btn secundario" onclick="fecharModalObjetivo()">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <h1 class="titulo-moderno">Registro</h1>
+    </header>
+
+    <section>
+        <div class="barra-progresso">
+            <div class="etapa etapa-ativa">1. Dados Pessoais</div>
+            <div class="etapa">2. Preferências</div>
+            <div class="etapa">3. Finalização</div>
+        </div>
+        <div class="dados-pessoais">
+            <h2 class="titulo-moderno titulo-espaco">Dados pessoais</h2>
+            <div class="primeira-linha">
+                <div class="box-email input-container">
+                    <i class="fa-solid fa-envelope input-icon"></i>
+                    <input type="email" name="input-email" class="input-email" id="inputEmail" placeholder="E-mail" required>
+                    <span class="input-focus-border"></span>
+                </div>
+                <div class="box-senha input-container">
+                    <i class="fa-solid fa-lock input-icon"></i>
+                    <input type="password" name="input-senha" class="input-senha" id="inputSenha" placeholder="Senha" required>
+                    <span class="input-focus-border"></span>
+                    <i class="fa-solid fa-eye-slash toggle-password"></i>
+                </div>
+                <div class="box-confirmar-senha input-container">
+                    <i class="fa-solid fa-lock input-icon"></i>
+                    <input type="password" name="input-confirmar-senha" class="input-confirmar-senha" id="inputConfirmarSenha" placeholder="Confirmar Senha" required>
+                    <span class="input-focus-border"></span>
+                    <i class="fa-solid fa-eye-slash toggle-password"></i>
+                </div>
+            </div>
+            <div class="segunda-linha">
+                <div class="box-nome input-container">
+                    <i class="fa-solid fa-user input-icon"></i>
+                    <input type="text" name="input-nome" class="input-nome" id="inputNome" placeholder="Nome" required>
+                    <span class="input-focus-border"></span>
+                </div>
+                <div class="box-sobrenome input-container">
+                    <i class="fa-solid fa-user input-icon"></i>
+                    <input type="text" name="input-sobrenome" class="input-sobrenome" id="inputSobrenome" placeholder="Sobrenome" required>
+                    <span class="input-focus-border"></span>
+                </div>
+            </div>
+            <div class="terceira-linha">
+                <div class="box-altura input-container">
+                    <i class="fa-solid fa-ruler-vertical input-icon"></i>
+                    <input type="number" name="input-altura" class="input-altura" id="inputAltura" placeholder="Altura (m)" required min="0" step="0.01">
+                    <span class="input-focus-border"></span>
+                </div>
+                <div class="box-peso input-container">
+                    <i class="fa-solid fa-weight-hanging input-icon"></i>
+                    <input type="number" name="input-peso" class="input-peso" id="inputPeso" placeholder="Peso (kg)" required min="0">
+                    <span class="input-focus-border"></span>
+                </div>
+            </div>
+            <div class="quarta-linha">
+                <div class="box-idade input-container">
+                    <i class="fa-solid fa-calendar input-icon"></i>
+                    <input type="number" name="input-idade" class="input-idade" id="inputIdade" placeholder="Idade" required min="0">
+                    <span class="input-focus-border"></span>
+                </div>
+                <div class="box-genero">
+                    <span class="titulo-genero">Gênero:</span>
+                    <div class="input-genero">
+                        <input type="radio" name="genero" value="Masculino" id="sexoMasculino" required>
+                        <label for="sexoMasculino" class="label-genero"><i class="fa-solid fa-person fa-lg"></i>Masculino</label>
+                    </div>
+                    <div class="input-genero">
+                        <input type="radio" name="genero" value="Feminino" id="sexoFeminino" required>
+                        <label for="sexoFeminino" class="label-genero"><i class="fa-solid fa-person-dress fa-lg"></i>Feminino</label>
+                    </div>
+                </div>
+            </div>
+            <!-- Campo de upload de foto de perfil -->
+            <div class="campo-foto-perfil melhorado">
+                <h2 class="titulo-moderno titulo-espaco">Foto de Perfil</h2>
+                <div class="foto-upload-row">
+                    <div class="foto-preview-wrapper">
+                        <img id="fotoPreview" class="foto-preview" src="/ON Focus/ON Focus Blog/imagens/download.png" alt="Prévia da Foto de Perfil">
+                    </div>
+                    <input type="file" id="fotoPerfil" name="fotoPerfil" accept="image/*" class="input-foto-perfil" onchange="previewFotoPerfil(event)">
+                </div>
+            </div>
+            <!-- Nova seção moderna de tempo disponível -->
+            <div class="nova-tempo-container">
+                <h2 class="titulo-moderno titulo-espaco">Tempo disponível</h2>
+                <div class="botoes-tempo">
+                    <input type="radio" name="tempo" id="tempo30" value="30 minutos">
+                    <label for="tempo30" class="botao-tempo">30 MINUTOS</label>
+                    <input type="radio" name="tempo" id="tempo60" value="60 minutos">
+                    <label for="tempo60" class="botao-tempo">60 MINUTOS</label>
+                    <input type="radio" name="tempo" id="tempo120" value="120 minutos">
+                    <label for="tempo120" class="botao-tempo">120 MINUTOS</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="dados-complementares">
+            <h2 class="titulo-moderno">Preferência de treino</h2>
+            <div class="preferencia-treino">
+                <div class="input-preferencia">
+                    <input type="radio" name="preferencia" value="casa" id="casa" required>
+                    <label for="casa"><i class="fa-solid fa-house-user fa-lg"></i>Casa</label>
+
+                </div>
+                <div class="input-preferencia">
+                    <input type="radio" name="preferencia" value="academia" id="academia" required>
+                    <label for="academia"><i class="fa-solid fa-dumbbell fa-lg"></i>Academia</label>
+                </div>
+            </div>
+
+            <h2 class="titulo-moderno">Objetivo</h2>
+            <div class="primeira-fileira">
+                <ul class="lista-cards">
+                    <li>
+                        <label class="card-objetivo">
+                            <input type="radio" name="card" value="Massa muscular" class="botao-card" id="massa">
+                            <div class="card-content">
+                                <h3 class="titulo-card">Massa muscular</h3>
+                                <div class="imagem-overlay">
+                                    <img src="imagens/ganharMassa.jpg" alt="imagem de pessoa levantando peso" class="imagem-card">
+                                    <div class="overlay"></div>
+                                </div>
+                                <p class="subtitulo">Para quem deseja ganhar músculos</p>
+                                <span class="icone-card"><i class="fa-solid fa-arrow-right fa-lg"></i></span>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="card-objetivo">
+                            <input type="radio" name="card" value="Perder peso" class="botao-card" id="peso">
+                            <div class="card-content">
+                                <h3 class="titulo-card">Perder peso</h3>
+                                <div class="imagem-overlay">
+                                    <img src="imagens/perderPeso.jpg" alt="imagem de balança" class="imagem-card">
+                                    <div class="overlay"></div>
+                                </div>
+                                <p class="subtitulo">Para quem deseja diminuir o número na balança</p>
+                                <span class="icone-card"><i class="fa-solid fa-arrow-right fa-lg"></i></span>
+                            </div>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="segunda-fileira">
+                <ul class="lista-cards">
+                    <li>
+                        <label class="card-objetivo">
+                            <input type="radio" name="card" value="Saúde" class="botao-card" id="saude">
+                            <div class="card-content">
+                                <h3 class="titulo-card">Saúde</h3>
+                                <div class="imagem-overlay">
+                                    <img src="imagens/saude.jpg" alt="imagem de pessoas praticando yoga" class="imagem-card">
+                                    <div class="overlay"></div>
+                                </div>
+                                <p class="subtitulo">Para quem deseja manter a saúde</p>
+                                <span class="icone-card"><i class="fa-solid fa-arrow-right fa-lg"></i></span>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="card-objetivo">
+                            <input type="radio" name="card" value="Condicionamento físico" class="botao-card" id="condicionamento">
+                            <div class="card-content">
+                                <h3 class="titulo-card">Condicionamento físico</h3>
+                                <div class="imagem-overlay">
+                                    <img src="imagens/condicionamento.jpg" alt="imagem de pessoa correndo" class="imagem-card">
+                                    <div class="overlay"></div>
+                                </div>
+                                <p class="subtitulo">Para quem deseja melhorar o condicionamento físico para praticar esportes</p>
+                                <span class="icone-card"><i class="fa-solid fa-arrow-right fa-lg"></i></span>
+                            </div>
+                        </label>
+                    </li>
+                </ul>
+                <div class="objetivo-indefinido">
+                    <p class="texto-indefinido">Ainda não sei meu objetivo específico</p>
+                    <button type="button" class="btn-indefinido" onclick="abrirModalObjetivo()">Quero ajuda para definir meu objetivo</button>
+                </div>
+            </div>
+
+            <h2 class="titulo-moderno">Nível de experiência</h2>
+            <div class="container-nivel">
+                <label for="iniciante">
+                    <input type="radio" name="nivel" value="iniciante" class="input-nivel" id="iniciante">
+                    <div class="item-nivel card-nivel" data-tooltip="Nunca treinou ou está começando agora.">
+                        <h3>Iniciante</h3>
+                        <img src="imagens/fogo1.png" alt="imagem de fogo pequeno representando nível iniciante">
+                    </div>
+                </label>
+                <label for="intermediario">
+                    <input type="radio" name="nivel" value="intermediario" class="input-nivel" id="intermediario">
+                    <div class="item-nivel card-nivel" data-tooltip="Já treina há algum tempo e possui experiência intermediária.">
+                        <h3>Intermediário</h3>
+                        <img src="imagens/fogo2.png" alt="imagem de fogo médio representando nível intermediario">
+                    </div>
+                </label>
+                <label for="avancado">
+                    <input type="radio" name="nivel" value="avançado" class="input-nivel" id="avancado">
+                    <div class="item-nivel card-nivel" data-tooltip="Treina há anos e possui alto nível de experiência.">
+                        <h3>Avançado</h3>
+                        <img src="imagens/fogo3.png" alt="imagem de fogo grande representando nível avançado">
+                    </div>
+                </label>
+            </div>
+        </div>
+
+        <div class="botao-login">
+            <button type="button" id="botaoConcluir" class="texto-butaologin">Concluir</button>
+        </div>
+
+    </section>
+
+    <script src="app.js"></script>
+    <script>
+    function selecionarTempo(valor) {
+        document.getElementById('tempoSelecionado').textContent = valor;
+        document.getElementById('checkbox-dropdown').checked = false;
+    }
+    function fecharModal() {
+        document.getElementById('modal-bemvindo').style.display = 'none';
+    }
+    window.onload = function() {
+        document.getElementById('modal-bemvindo').style.display = 'flex';
+    }
+    
+    // Toggle password visibility
+    document.querySelectorAll('.toggle-password').forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            const input = this.previousElementSibling.previousElementSibling;
+            const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+            input.setAttribute('type', type);
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+    });
+
+    // Input validation feedback
+    document.querySelectorAll('input[required]').forEach(input => {
+        input.addEventListener('input', function() {
+            if (this.value.trim() !== '') {
+                this.classList.add('valid');
+                this.classList.remove('invalid');
+            } else {
+                this.classList.remove('valid');
+                this.classList.add('invalid');
+            }
+        });
+
+        input.addEventListener('blur', function() {
+            if (this.value.trim() === '') {
+                this.classList.add('invalid');
+            }
+        });
+    });
+
+    function abrirModalObjetivo() {
+        document.getElementById('modal-objetivo').style.display = 'flex';
+    }
+    function fecharModalObjetivo() {
+        document.getElementById('modal-objetivo').style.display = 'none';
+        resetQuiz();
+    }
+
+    // Quiz lógica
+    let quizStep = 1;
+    let respostasQuiz = [];
+    const perguntas = document.querySelectorAll('.pergunta');
+    const resultadoQuiz = document.querySelector('.resultado-quiz');
+    const tituloResultado = document.getElementById('titulo-resultado');
+    const textoResultado = document.getElementById('texto-resultado');
+
+    function resetQuiz() {
+        quizStep = 1;
+        respostasQuiz = [];
+        perguntas.forEach((p, i) => {
+            p.style.display = i === 0 ? 'block' : 'none';
+        });
+        resultadoQuiz.style.display = 'none';
+    }
+
+    function mostrarPergunta(step) {
+        perguntas.forEach(p => {
+            p.style.display = p.getAttribute('data-step') == step ? 'block' : 'none';
+        });
+        resultadoQuiz.style.display = 'none';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.quiz-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const parent = this.closest('.pergunta');
+                if (parent) {
+                    respostasQuiz.push(this.getAttribute('data-value'));
+                    quizStep++;
+                    if (quizStep <= perguntas.length) {
+                        mostrarPergunta(quizStep);
+                    } else {
+                        mostrarResultadoQuiz();
+                    }
+                }
+            });
+        });
+        document.getElementById('aceitar-objetivo').addEventListener('click', function() {
+            fecharModalObjetivo();
+            // Aqui você pode marcar o objetivo sugerido no formulário
+        });
+    });
+
+    function mostrarResultadoQuiz() {
+        perguntas.forEach(p => p.style.display = 'none');
+        resultadoQuiz.style.display = 'block';
+        // Lógica simples de sugestão
+        let sugestao = '';
+        let explicacao = '';
+        if (respostasQuiz.includes('Ganhar massa')) {
+            sugestao = 'Massa muscular';
+            explicacao = 'Você demonstrou interesse em ganhar massa muscular. Recomendamos esse objetivo para você!';
+        } else if (respostasQuiz.includes('Perder peso')) {
+            sugestao = 'Perder peso';
+            explicacao = 'Seu foco está em perder peso. Vamos juntos nessa jornada!';
+        } else if (respostasQuiz.includes('Saúde')) {
+            sugestao = 'Saúde';
+            explicacao = 'Você busca mais saúde e qualidade de vida. Esse é um ótimo objetivo!';
+        } else if (respostasQuiz.includes('Condicionamento')) {
+            sugestao = 'Condicionamento físico';
+            explicacao = 'Você quer melhorar seu condicionamento físico. Excelente escolha!';
+        } else {
+            sugestao = 'Saúde';
+            explicacao = 'Com base nas suas respostas, sugerimos começar com o objetivo Saúde.';
+        }
+        tituloResultado.textContent = `Sugerimos: ${sugestao}`;
+        textoResultado.textContent = explicacao;
+    }
+
+    function previewFotoPerfil(event) {
+        const input = event.target;
+        const preview = document.getElementById('fotoPreview');
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    </script>
+</body>
+</html>

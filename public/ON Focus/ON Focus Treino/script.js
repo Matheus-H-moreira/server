@@ -277,7 +277,7 @@ if (newsletterForm) {
 // Função para carregar e exibir treinos
 async function carregarTreinos() {
     try {
-        const response = await fetch('http://https://tiaw-obesidade.onrender.com/treinos');
+        const response = await fetch('https://tiaw-obesidade.onrender.com/treinos');
         const treinos = await response.json();
         const container = document.querySelector('.treinos-container');
         if (!container) return;

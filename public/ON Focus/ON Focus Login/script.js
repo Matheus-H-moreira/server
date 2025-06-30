@@ -111,7 +111,7 @@ loginForm.addEventListener('submit', async (e) => {
     }
 
     try {
-        const response = await fetch(`http://localhost:3000/usuarios?email=${encodeURIComponent(email)}&senha=${encodeURIComponent(senha)}`);
+        const response = await fetch(`https://tiaw-obesidade.onrender.com/usuarios?email=${encodeURIComponent(email)}&senha=${encodeURIComponent(senha)}`);
         const data = await response.json();
         if (data.length > 0) {
             // Usuário autenticado

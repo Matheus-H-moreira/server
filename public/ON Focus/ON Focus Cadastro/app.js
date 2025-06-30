@@ -98,7 +98,7 @@ if (botaoConcluir) {
 
         // VERIFICAÇÃO DE E-MAIL DUPLICADO
         try {
-            const verificaEmail = await fetch(`http://https://tiaw-obesidade.onrender.com/usuarios?email=${encodeURIComponent(email)}`);
+            const verificaEmail = await fetch(`http://https://localhost:3000/usuarios?email=${encodeURIComponent(email)}`);
             const usuariosComEmail = await verificaEmail.json();
             if (usuariosComEmail.length > 0) {
                 showToast('Já existe uma conta cadastrada com este e-mail. Use outro e-mail ou faça login.', 'fa-exclamation-triangle');
@@ -142,7 +142,7 @@ if (botaoConcluir) {
         novoUsuario.foto = await lerImagem;
 
         try {
-            const response = await fetch('http://https://tiaw-obesidade.onrender.com/usuarios', {
+            const response = await fetch('http://https://localhost:3000/usuarios', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -267,7 +267,7 @@ document.getElementById('edit-profile-form')?.addEventListener('submit', async (
     };
 
     try {
-        const response = await fetch(`http://https://tiaw-obesidade.onrender.com/usuarios/${usuarioLogado.id}`, {
+        const response = await fetch(`http://https://localhost:3000/usuarios/${usuarioLogado.id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(dadosAtualizados)
